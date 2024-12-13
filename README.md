@@ -22,14 +22,19 @@ Prueba de Evalución Final
 
 * Configuración de Boostrap, jquery, popper, sassc
 
-    cambiar de nombre app\assets\stylesheets\application.css a app\assets\stylesheets\application.scss
-    agregar en app\assets\stylesheets\application.scss la linea @import "bootstrap";
-    agregar en app\javascript\application.js las líneas import "bootstrap" import "popper"
-    agregar en config\initializers\assets.rb Rails.application.config.assets.precompile += %w( application.scss bootstrap.min.js popper.js )
-    agregar en config\importmap.rb pin "popper", to: 'popper.js', preload: true pin "bootstrap", to: 'bootstrap.min.js', preload: true
+* cambiar de nombre app\assets\stylesheets\application.css a app\assets\stylesheets\application.scss
+* agregar en app\assets\stylesheets\application.scss la linea @import "bootstrap";
+* agregar en app\javascript\application.js las líneas import "bootstrap" import "popper"
+* agregar en config\initializers\assets.rb Rails.application.config.assets.precompile += %w( application.scss bootstrap.min.js popper.js )
+* agregar en config\importmap.rb pin "popper", to: 'popper.js', preload: true pin "bootstrap", to: 'bootstrap.min.js', preload: true
 
-* Services (job queues, cache servers, search engines, etc.)
+* Ejecutar bundle install
 
-* Deployment instructions
+* gem install divice
+* bundle add devise
+* rails generate devise:install
+* rails g devise:views
+* rails generate devise user
+* rails generate devise:controllers users
 
-* ...
+*
