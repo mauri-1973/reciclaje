@@ -57,3 +57,15 @@ group :test do
 end
 
 gem 'figaro'
+
+gem "bootstrap", "~> 5.3"
+
+gem "jquery-rails", "~> 4.6"
+
+gem "popper_js", ">= 0"
+
+gem "sassc-rails", ">= 0"
+
+gem "faker", ">= 0"
+
+gem "devise", ">= 0"
