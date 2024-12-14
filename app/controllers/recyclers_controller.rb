@@ -3,7 +3,11 @@ class RecyclersController < ApplicationController
     before_action :authorize_operador_or_admin!
     before_action :set_recycler, only: [ :edit, :update, :destroy]
     def index
+      if params[:search].present?
+        @recyclers = Recycler.where('name ILIKE ? OR phone ILIKE ? OR email ILIKE ?', "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%").page(params[:page]).per(10)
+      else
         @recyclers = Recycler.page(params[:page]).per(10) # Paginación de 10 elementos por página
+      end
     end
   
     def new

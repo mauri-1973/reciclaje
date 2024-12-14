@@ -69,6 +69,7 @@ end
 * subir el repositorio a git con la aplicación y sus funcionalidades operativas
 * Ingresar al render y configurar el panel de control
 * desplegar
+* Agregando buscador vista recicladores
 
 
 <image src="/imagenes/1.png" alt="Descripción de la imagen">
