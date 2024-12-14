@@ -69,3 +69,13 @@ end
 * subir el repositorio a git con la aplicación y sus funcionalidades operativas
 * Ingresar al render y configurar el panel de control
 * desplegar
+
+
+<image src="/imagenes/1.png" alt="Descripción de la imagen">
+<image src="/imagenes/2.png" alt="Descripción de la imagen">
+<image src="/imagenes/3.png" alt="Descripción de la imagen">
+<image src="/imagenes/4.png" alt="Descripción de la imagen">
+<image src="/imagenes/5.png" alt="Descripción de la imagen">
+<image src="/imagenes/6.png" alt="Descripción de la imagen">
+<image src="/imagenes/7.png" alt="Descripción de la imagen">
+<image src="/imagenes/8.png" alt="Descripción de la imagen">
