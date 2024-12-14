@@ -55,3 +55,17 @@ end
 * rails generate controller Materials
 * rails generate controller Deliveries
 * Configuramos las rutas
+
+* Agregamos un índice a la tabla recicladores, para evitar duplicados
+* rails generate migration add_index_to_recyclers_email
+* rails db:migrate
+* gem install kaminari
+* bundle add kaminari
+* rails g kaminari:views bootstrap4
+* configurar render
+* Crear archivo en  bin\render-build.sh
+* dar los permisos chmod a+x bin\render-build.sh
+* agregar render.yaml con las instrucciones básicas de render
+* subir el repositorio a git con la aplicación y sus funcionalidades operativas
+* Ingresar al render y configurar el panel de control
+* desplegar
