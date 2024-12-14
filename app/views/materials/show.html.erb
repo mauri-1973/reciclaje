@@ -1,0 +1,29 @@
+<h1>Materiales Reciclados por <%= @recycler.name %></h1>
+
+   <table class="table">
+     <thead>
+       <tr>
+         <th>Nombre del Material</th>
+         <th>Descripción</th>
+         <th>Acciones</th>
+       </tr>
+     </thead>
+     <tbody>
+       <% @materials.each do |material| %>
+         <tr>
+           <td><%= material.name %></td>
+           <td><%= material.description %></td>
+           <td>
+             <%= link_to 'Editar', edit_recycler_material_path(@recycler, material), class: "btn btn-warning" %>
+             <%= link_to 'Eliminar', recycler_material_path(@recycler, material), method: :delete, data: { confirm: '¿Estás seguro?' }, class: "btn btn-danger"  %>
+           </td>
+         </tr>
+       <% end %>
+     </tbody>
+   </table>
+
+   <div class="pagination">
+     <%= paginate @materials %>
+   </div>
+
+   <%= link_to 'Volver a los Recicladores', recyclers_path, class: "btn btn-secondary" %>

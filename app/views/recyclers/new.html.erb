@@ -1,0 +1,45 @@
+<h1>Registrar Reciclador</h1>
+    <%= link_to 'Volver', recyclers_path, class: 'btn btn-secondary mt-4 mb-4' %>
+  <%= form_with model: @recycler, local: true do |form| %>
+    <div class="mb-3">
+      <%= form.label :name, 'Nombre del Reciclador', class: 'form-label' %>
+      <%= form.text_field :name, class: 'form-control', placeholder: 'Ingresa el nombre del reciclador' %>
+      <% if @recycler.errors[:name].any? %>
+        <small class="text-danger"><%= @recycler.errors[:name].first %></small>
+      <% end %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :phone, 'Número Telefónico', class: 'form-label' %>
+      <%= form.text_field :phone, class: 'form-control', placeholder: 'Ingresa el número telefónico' %>
+      <% if @recycler.errors[:phone].any? %>
+        <small class="text-danger"><%= @recycler.errors[:phone].first %></small>
+      <% end %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :address, 'Dirección', class: 'form-label' %>
+      <%= form.text_field :address, class: 'form-control', placeholder: 'Ingresa la dirección' %>
+      <% if @recycler.errors[:address].any? %>
+        <small class="text-danger"><%= @recycler.errors[:address].first %></small>
+      <% end %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :email, 'Correo Electrónico', class: 'form-label' %>
+      <%= form.email_field :email, class: 'form-control', placeholder: 'Ingresa el correo electrónico' %>
+      <% if @recycler.errors[:email].any? %>
+        <small class="text-danger"><%= @recycler.errors[:email].first %></small>
+      <% end %>
+    </div>
+    <div class="form-group">
+        <%= form.label :materials, "Selecciona Materiales" %>
+        <%= form.collection_select :material_ids, @materials, :id, :name, { include_blank: false }, {multiple: true, class: 'form-select'} %>
+        <!-- `material_ids` permite que Rails maneje múltiples selecciones -->
+    </div>
+
+    <div class="d-flex justify-content-between">
+      
+      <%= form.submit 'Guardar Reciclador', class: 'btn btn-primary mt-3 mb-3' %>
+    </div>
+  <% end %>

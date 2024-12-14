@@ -69,3 +69,5 @@ gem "sassc-rails", ">= 0"
 gem "faker", ">= 0"
 
 gem "devise", ">= 0"
+
+gem "kaminari", "~> 1.2"

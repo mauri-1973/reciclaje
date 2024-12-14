@@ -1,0 +1,42 @@
+
+  <h1 class="mb-4">Lista de Recicladores</h1>
+  <%= link_to 'Crear Reciclador', new_recycler_path, class: 'btn btn-secondary mt-4 mb-4' %>
+  
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Dirección</th>
+                <th>Email</th>
+                <th>Mant. Usuario</th>
+                <th>Mantenedor Entregas</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @recyclers.each do |recycler| %>
+                <tr>
+                    <td><%= recycler.name %></td>
+                    <td><%= recycler.phone %></td>
+                    <td><%= recycler.address %></td>
+                    <td><%= recycler.email %></td>
+                    <td>
+                        <%= link_to 'Editar', edit_recycler_path(recycler), class: 'btn btn-primary btn-sm' %>
+                        <%= link_to 'Eliminar', recycler_path(recycler), method: :delete, data: { confirm: '¿Estás seguro?', turbolinks: false }, class: 'btn btn-danger btn-sm' %>
+                    </td>
+                    <td>
+                        <%= link_to new_recycler_delivery_path(recycler), class: 'btn btn-primary btn-sm', title: "Registrar Entrega" do %>
+                            <i class="fas fa-plus"></i>
+                        <% end %>
+                        <%= link_to recycler_deliveries_path(recycler), class: 'btn btn-info btn-sm', title: "Ver Entregas" do %>
+                            <i class="fas fa-list"></i>
+                        <% end %>
+                    </td>
+                </tr>
+            <% end %>
+            </tbody>
+        </table>
+    </div>
+
+  <%= paginate @recyclers, theme: 'bootstrap-4' %> <!-- Paginación -->

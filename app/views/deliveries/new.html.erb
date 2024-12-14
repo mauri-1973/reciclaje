@@ -1,0 +1,32 @@
+<h1>Registrar Entrega de Material</h1>
+<%= link_to 'Volver', recycler_path(@recycler), class: "btn btn-secondary mt-4 mb-4" %>
+    <%= form_with(model: [@recycler, @delivery], local: true) do |form| %>
+        <% if @delivery.errors.any? %>
+            <div id="error_explanation">
+                <h2><%= pluralize(@delivery.errors.count, "error") %> impidieron guardar la entrega:</h2>
+                <ul>
+                    <% @delivery.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
+
+        <div class="mb-3">
+            <%= form.label :material_id, "Material", class: "form-label" %>
+            <%= form.collection_select :material_id, @recycler.materials, :id, :name, { prompt: "Selecciona un material" }, { class: "form-select" } %>
+        </div>
+
+        <div class="mb-3">
+            <%= form.label :delivery_date, "Fecha de Entrega", class: "form-label" %>
+            <%= form.date_select :delivery_date, class: 'form-control' %>
+        </div>
+
+        <div class="mb-3">
+            <%= form.label :quantity, "Cantidad", class: "form-label" %>
+            <%= form.number_field :quantity, class: 'form-control' %>
+        </div>
+    
+        <%= form.submit "Registrar Entrega", class: "btn btn-primary" %>
+    <% end %>
+
