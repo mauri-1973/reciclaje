@@ -70,6 +70,7 @@ end
 * Ingresar al render y configurar el panel de control
 * desplegar
 * Agregando buscador vista recicladores
+* URL GIT https://github.com/mauri-1973/reciclaje
 
 
 <image src="/imagenes/1.png" alt="Descripción de la imagen">
